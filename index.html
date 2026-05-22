@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishnaSilks | Premium Indian Textiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-50">
+
+    <!-- شريط بيع الدومين -->
+    <div class="bg-amber-950 text-white py-4 px-6 text-center shadow-lg">
+        <p class="text-lg font-bold mb-3">This Premium Domain KrishnaSilks.com is FOR SALE</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://www.godaddy.com" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-black px-6 py-2 rounded-full font-bold transition">Buy on GoDaddy</a>
+            <a href="https://wa.me/9647805380508" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-bold transition">WhatsApp: +9647805380508</a>
+            <a href="mailto:cccvcccv3@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition">Email: cccvcccv3@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- النافبار -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold italic text-amber-900">KrishnaSilks</h1>
+            <div class="hidden md:flex gap-8 font-semibold text-stone-700 uppercase tracking-widest text-sm">
+                <a href="#" class="hover:text-amber-900">Shop</a>
+                <a href="#" class="hover:text-amber-900">Collections</a>
+                <a href="#" class="hover:text-amber-900">About Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- العرض الرئيسي -->
+    <header class="relative h-[60vh] flex items-center justify-center text-white">
+        <img src="https://images.unsplash.com/photo-1596464406182-35360a80e1a4?auto=format&fit=crop&w=2000" class="absolute w-full h-full object-cover brightness-50">
+        <div class="relative text-center">
+            <h2 class="text-6xl font-serif mb-4">Indian Elegance</h2>
+            <p class="text-xl">Authentic Silks & Handcrafted Textiles</p>
+        </div>
+    </header>
+
+    <!-- قسم الصور الذي يقرأ من الملف الآخر -->
+    <section class="max-w-7xl mx-auto py-16 px-6">
+        <h3 class="text-3xl font-bold text-center mb-12 text-amber-900 uppercase">Gallery</h3>
+        <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-10 text-center">
+        <p>&copy; 2026 KrishnaSilks. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ربط ملف الصور -->
+    <script src="gallery-data.js"></script>
+    <script>
+        const container = document.getElementById('gallery-container');
+        imagesData.forEach(src => {
+            container.innerHTML += `
+                <div class="h-96 overflow-hidden rounded-lg shadow-lg">
+                    <img src="${src}" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Silk Product">
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
+
+
+          
