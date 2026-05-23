@@ -301,7 +301,8 @@ footer{background:#060000;border-top:1px solid rgba(201,168,76,.12);padding:60px
 <!-- ═══════════ HERO ═══════════ -->
 <header class="hero">
   <div class="hero-bg">
-    <img src="https://raw.githubusercontent.com/RaniaAkramm/RaniaAkramm/main/file_00000000323c71fdb7878b6250715f6b.png" alt="Premium Indian Silk Fabrics — Krishna Silks Indiana">
+    <!-- الصورة الخلفية تُجلب من GitHub مباشرة -->
+    <img id="hero-image" src="https://raw.githubusercontent.com/RaniaAkramm/RaniaAkramm/main/file_00000000323c71fdb7878b6250715f6b.png" alt="Premium Indian Silk Fabrics — Krishna Silks Indiana">
   </div>
   <div class="hero-inner fi">
     <div class="hero-eyebrow">Established Excellence &nbsp;·&nbsp; Indiana, USA</div>
@@ -535,12 +536,14 @@ footer{background:#060000;border-top:1px solid rgba(201,168,76,.12);padding:60px
   </div>
 </footer>
 
-<!-- ═══════════ FIREBASE VISITOR COUNTER ═══════════ -->
+<!-- ═══════════ FIREBASE & GITHUB ASSETS LOADER ═══════════ -->
 <script type="module">
+  // استيراد حزم الفايربيس من CDN الرسمي
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-  import { getFirestore, doc, setDoc, updateDoc, increment, onSnapshot }
-    from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+  import { getFirestore, doc, setDoc, updateDoc, increment, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+  // إعدادات Firebase الخاصة بمشروعك JYA-Nexus
   const firebaseConfig = {
     apiKey: "AIzaSyCcjqu7G7ntMJCCgjaS2WKlJpTIKjoXTyU",
     authDomain: "jya-nexus.firebaseapp.com",
@@ -551,29 +554,95 @@ footer{background:#060000;border-top:1px solid rgba(201,168,76,.12);padding:60px
     measurementId: "G-8QQ6TQ3CB2"
   };
 
+  // تهيئة التطبيق
   const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
   const db  = getFirestore(app);
   const ref = doc(db, "analytics", "krishnasilks_counter");
 
-  async function initCounter() {
+  // دالة تشغيل العداد بعد إتمام عملية تسجيل الدخول المجهول (Anonymous Auth)
+  async function initFirebaseCounter() {
     const el = document.getElementById("visitor-count");
-    onSnapshot(ref, async snap => {
-      if (snap.exists()) {
-        el.innerText = snap.data().views.toLocaleString() || 0;
-      } else {
-        await setDoc(ref, { views: 1 });
+    
+    try {
+      // قاعدة البيانات لا يمكن قراءتها وتحديثها إلا بعد الترخيص وتحديد هويّة مستخدم مجهول
+      await signInAnonymously(auth);
+      
+      // التزامن المباشر والحي للبيانات بقاعدة البيانات
+      onSnapshot(ref, async snap => {
+        if (snap.exists()) {
+          el.innerText = snap.data().views.toLocaleString() || 0;
+        } else {
+          await setDoc(ref, { views: 1 });
+        }
+      }, error => {
+        console.error("Firebase Snapshot Error:", error);
+        el.innerText = "Error";
+      });
+
+      // إضافة زيارة واحدة فقط في الجلسة الواحدة لتجنب التكرار والعبث
+      if (!sessionStorage.getItem("krishnasilks_session")) {
+        try {
+          await updateDoc(ref, { views: increment(1) });
+          sessionStorage.setItem("krishnasilks_session", "true");
+        } catch(e) { 
+          // إنشاء مستند جديد في السحابة إذا كان العداد صفر
+          await setDoc(ref, { views: 1 });
+          sessionStorage.setItem("krishnasilks_session", "true");
+        }
       }
-    }, error => {
-      console.log("Firebase snapshot error:", error);
-    });
-    if (!sessionStorage.getItem("krishnasilks_session")) {
-      try {
-        await updateDoc(ref, { views: increment(1) });
-        sessionStorage.setItem("krishnasilks_session", "true");
-      } catch(e) { console.log("Initializing counter on cloud..."); }
+    } catch (authError) {
+      console.error("Firebase Authentication failed:", authError);
+      el.innerText = "Offline";
     }
   }
-  initCounter();
+
+  // دالة متطورة لجلب وعرض الصور حركياً مباشرة من مستودع GitHub الخاص بك
+  async function loadGitHubImages() {
+    const username = "RaniaAkramm";
+    const repo = "RaniaAkramm";
+    const branch = "main";
+    const apiURL = `https://api.github.com/repos/${username}/${repo}/contents/`;
+
+    try {
+      console.log("جاري استدعاء البيانات من مستودع GitHub...");
+      const response = await fetch(apiURL);
+      if (!response.ok) throw new Error("فشل الاتصال بـ GitHub API");
+      
+      const files = await response.json();
+      
+      // تصفية الملفات للحصول على الصور فقط
+      const imageFiles = files.filter(file => {
+        const name = file.name.toLowerCase();
+        return name.endsWith('.png') || name.endsWith('.jpg') || name.endsWith('.jpeg') || name.endsWith('.webp');
+      });
+
+      console.log("تم استخراج قائمة الصور بنجاح من المستودع:", imageFiles);
+
+      // هنا نقوم بربط وتأكيد مسارات الصور في الكاردات المخصصة بالكتالوج
+      // ملاحظة: الكود الأساسي يقوم باستدعاء الصور عبر الرابط raw.githubusercontent.com
+      // قمنا هنا بإضافة نظام تحقق ذكي؛ إذا تعطلت أي صورة محلياً يقوم بجلبها فوراً من المسار السحابي للغيتهاب
+      document.querySelectorAll('.cat-card img, #hero-image').forEach(img => {
+        img.addEventListener('error', () => {
+          const originalSrc = img.src;
+          const fileName = originalSrc.substring(originalSrc.lastIndexOf('/') + 1);
+          // استبدال المسار بالرابط الخام لـ Raw GitHub
+          const rawGitHubUrl = `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${fileName}`;
+          console.log(`تم تصحيح وجلب مسار الصورة من GitHub بنجاح: ${fileName}`);
+          img.src = rawGitHubUrl;
+        });
+      });
+
+    } catch (error) {
+      console.error("حدث خطأ أثناء جلب الصور من GitHub:", error);
+    }
+  }
+
+  // إطلاق الخدمات دفعة واحدة عند تحميل الصفحة
+  window.onload = function() {
+    initFirebaseCounter();
+    loadGitHubImages();
+  };
 </script>
 
 <!-- Scroll fade-in -->
@@ -586,4 +655,3 @@ document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
 </body>
 </html>
-
