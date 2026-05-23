@@ -1,77 +1,1072 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KrishnaSilks.com | Premium Indian Textiles & Domain For Sale</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Plus+Jakarta+Sans:wght@200;400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #C9A84C; --deep-red: #8B1A1A; --dark: #0a0300; --cream: #FFF8F0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark); color: var(--cream); }
-        .font-serif-luxury { font-family: 'Playfair Display', serif; }
-        .announcement { background: linear-gradient(90deg, #5a0d0d, #8B1A1A, #5a0d0d); padding: 12px; text-align: center; border-bottom: 1px solid var(--gold); font-size: 14px; letter-spacing: 1px; }
-        .announcement span { color: var(--gold); font-weight: 700; }
-        .btn-gold { background: linear-gradient(135deg, var(--gold), #B8860B); color: var(--dark); transition: 0.3s; }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(201, 168, 76, 0.3); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Silks - أفخم الأقمشة الهندية</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --deep-red: #8B1A1A;
+    --crimson: #B22222;
+    --dark: #1a0a00;
+    --cream: #FFF8F0;
+    --silk: #F5E6CC;
+    --accent: #E8B860;
+    --text-dark: #2D1200;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ===== ANNOUNCEMENT BAR ===== */
+  .announcement {
+    background: linear-gradient(90deg, var(--deep-red), #6B0F0F, var(--deep-red));
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--gold);
+    animation: shimmer 3s infinite;
+  }
+  .announcement span { color: var(--gold); font-weight: 700; }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* ===== HERO BANNER / AD ===== */
+  .hero-ad {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    background: linear-gradient(135deg, #1a0500 0%, #3d0f0f 40%, #1a0500 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .hero-ad::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(139,26,26,0.3) 0%, transparent 60%);
+  }
+
+  .mandala-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    opacity: 0.07;
+    right: -100px;
+    top: -100px;
+    animation: rotateSlow 60s linear infinite;
+  }
+
+  @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 60px 40px;
+    gap: 60px;
+  }
+
+  .hero-text { text-align: right; }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-subtitle-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--silk);
+    margin-bottom: 20px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,248,240,0.75);
+    margin-bottom: 36px;
+    max-width: 460px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), #B8860B);
+    color: var(--dark);
+    padding: 16px 36px;
+    border: none;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    padding: 15px 35px;
+    border: 1.5px solid var(--gold);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-secondary:hover { background: rgba(201,168,76,0.1); transform: translateY(-3px); }
+
+  .hero-image-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-frame {
+    position: relative;
+    width: 380px;
+    height: 480px;
+  }
+
+  .hero-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+    filter: brightness(0.9) saturate(1.2);
+  }
+
+  .frame-corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-color: var(--gold);
+    border-style: solid;
+  }
+  .frame-corner.tl { top: -6px; left: -6px; border-width: 2px 0 0 2px; }
+  .frame-corner.tr { top: -6px; right: -6px; border-width: 2px 2px 0 0; }
+  .frame-corner.bl { bottom: -6px; left: -6px; border-width: 0 0 2px 2px; }
+  .frame-corner.br { bottom: -6px; right: -6px; border-width: 0 2px 2px 0; }
+
+  .badge-offer {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    background: var(--crimson);
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    border: 1px solid var(--gold);
+    font-family: 'Tajawal', sans-serif;
+  }
+  .badge-offer .big { font-size: 22px; font-weight: 900; display: block; }
+  .badge-offer .small { font-size: 11px; }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    background: rgba(10,3,0,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+  }
+
+  .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .logo span { color: var(--cream); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    direction: ltr;
+  }
+  .nav-links a {
+    color: rgba(255,248,240,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-icons { display: flex; gap: 20px; align-items: center; }
+  .nav-icons button {
+    background: none; border: none; color: var(--cream); cursor: pointer;
+    font-size: 18px; transition: color 0.3s;
+  }
+  .nav-icons button:hover { color: var(--gold); }
+
+  /* ===== SECTION TITLE ===== */
+  .section-title {
+    text-align: center;
+    padding: 70px 20px 50px;
+  }
+  .section-title .overline {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .section-title p {
+    font-size: 16px;
+    color: rgba(255,248,240,0.6);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .gold-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 20px auto 0;
+  }
+
+  /* ===== FABRIC COLLECTION ===== */
+  .fabrics-section {
+    background: linear-gradient(180deg, var(--dark) 0%, #100400 100%);
+    padding: 0 20px 80px;
+  }
+
+  .fabrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .fabric-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(201,168,76,0.2);
+    transition: all 0.4s;
+    background: #150600;
+  }
+  .fabric-card:hover { border-color: var(--gold); transform: translateY(-6px); }
+  .fabric-card:hover .fabric-overlay { opacity: 1; }
+  .fabric-card:hover img { transform: scale(1.08); }
+
+  .fabric-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.5s;
+    display: block;
+  }
+
+  .fabric-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    opacity: 0.6;
+    transition: opacity 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+
+  .fabric-info { width: 100%; }
+  .fabric-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .fabric-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .fabric-name-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 12px;
+  }
+  .fabric-price {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  /* ===== COMPANY SECTION ===== */
+  .company-section {
+    background: linear-gradient(135deg, #0f0200 0%, #200800 50%, #0f0200 100%);
+    padding: 80px 40px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .company-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .company-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    position: relative;
+  }
+
+  .company-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid rgba(201,168,76,0.3);
+    filter: sepia(15%) saturate(1.1);
+  }
+
+  .company-images img:first-child {
+    grid-column: 1 / -1;
+    height: 280px;
+  }
+
+  .company-text { text-align: right; }
+
+  .company-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 44px);
+    color: var(--cream);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .company-text h3 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .company-text p {
+    color: rgba(255,248,240,0.7);
+    line-height: 2;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 40px;
+    margin: 36px 0;
+    justify-content: flex-end;
+  }
+
+  .stat { text-align: center; }
+  .stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: var(--gold);
+    font-weight: 900;
+    line-height: 1;
+  }
+  .stat .label {
+    font-size: 13px;
+    color: rgba(255,248,240,0.6);
+    margin-top: 4px;
+  }
+
+  /* ===== MODELS SECTION ===== */
+  .models-section {
+    background: var(--dark);
+    padding: 0 20px 80px;
+  }
+
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .model-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .model-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+    filter: saturate(1.1);
+  }
+  .model-card:hover img { transform: scale(1.05); }
+
+  .model-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10,3,0,0.9) 0%, transparent 60%);
+    padding: 30px 20px 20px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+  .model-card:hover .model-overlay { opacity: 1; transform: translateY(0); }
+
+  .model-name {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .model-style {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+
+  .model-card.featured {
+    grid-row: 1 / 3;
+    aspect-ratio: auto;
+  }
+
+  /* ===== CONTACT / BUY SECTION ===== */
+  .buy-section {
+    background: linear-gradient(135deg, #1a0500, #2d0808, #1a0500);
+    padding: 80px 40px;
+    text-align: center;
+    border-top: 2px solid rgba(201,168,76,0.4);
+  }
+
+  .buy-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 52px);
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .buy-section p {
+    color: rgba(255,248,240,0.7);
+    font-size: 17px;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  .contact-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto 48px;
+  }
+
+  .contact-card {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 32px 40px;
+    flex: 1;
+    min-width: 240px;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: block;
+  }
+  .contact-card:hover {
+    background: rgba(201,168,76,0.12);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+
+  .contact-card .icon { font-size: 36px; margin-bottom: 16px; }
+  .contact-card .title {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .contact-card .value {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 17px;
+    color: var(--cream);
+    font-weight: 500;
+    direction: ltr;
+  }
+
+  .domain-box {
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(139,26,26,0.15));
+    border: 2px solid var(--gold);
+    padding: 32px 48px;
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .domain-box::before {
+    content: '🌐';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    background: var(--dark);
+    padding: 0 10px;
+  }
+
+  .domain-name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(20px, 3vw, 32px);
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .domain-desc {
+    color: rgba(255,248,240,0.7);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .domain-cta {
+    display: inline-flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #080100;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 60px 40px 30px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand .logo { font-size: 26px; display: block; margin-bottom: 16px; }
+  .footer-brand p { color: rgba(255,248,240,0.5); font-size: 14px; line-height: 1.8; }
+
+  .footer-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,248,240,0.55);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-bottom p { color: rgba(255,248,240,0.35); font-size: 13px; }
+
+  /* ===== ORNAMENT ===== */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 24px;
+    opacity: 0.5;
+    margin: 0 auto;
+    padding: 10px 0;
+    letter-spacing: 8px;
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-eyebrow::before { display: none; }
+    .hero-desc { margin: 0 auto 36px; }
+    .hero-buttons { justify-content: center; }
+    .hero-image-area { order: -1; }
+    .hero-image-frame { width: 280px; height: 360px; }
+    .badge-offer { left: 0; }
+    .company-inner { grid-template-columns: 1fr; gap: 40px; }
+    .models-grid { grid-template-columns: 1fr 1fr; }
+    .model-card.featured { grid-row: auto; }
+    .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+  }
+</style>
 </head>
 <body>
 
-    <div class="announcement">
-        ✨ Free Shipping on Orders over $200 | Premium Domain Available: <span class="text-white">+964 780 538 0508</span> ✨
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement">
+  ✨ شحن مجاني على الطلبات فوق $200 | عروض موسم الأعراس | تواصل معنا: <span>+964 780 538 0508</span> ✨
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="https://KrishnaSilks.com" class="logo">Krishna<span>Silks</span></a>
+  <ul class="nav-links">
+    <li><a href="#">الأقمشة</a></li>
+    <li><a href="#">الساري</a></li>
+    <li><a href="#">الليهنغا</a></li>
+    <li><a href="#">المجموعات</a></li>
+    <li><a href="#">عن الشركة</a></li>
+    <li><a href="#">تواصل معنا</a></li>
+  </ul>
+  <div class="nav-icons">
+    <button>🔍</button>
+    <button>🛒</button>
+  </div>
+</nav>
+
+<!-- HERO AD BANNER -->
+<div class="hero-ad">
+  <!-- Decorative SVG Mandala -->
+  <svg class="mandala-bg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="95" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="80" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="65" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="50" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="35" stroke="#C9A84C" stroke-width="0.5"/>
+    <line x1="5" y1="100" x2="195" y2="100" stroke="#C9A84C" stroke-width="0.5"/>
+    <line x1="100" y1="5" x2="100" y2="195" stroke="#C9A84C" stroke-width="0.5"/>
+    <line x1="33" y1="33" x2="167" y2="167" stroke="#C9A84C" stroke-width="0.5"/>
+    <line x1="167" y1="33" x2="33" y2="167" stroke="#C9A84C" stroke-width="0.5"/>
+    <polygon points="100,10 120,50 160,50 128,75 140,115 100,90 60,115 72,75 40,50 80,50" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="8" fill="#C9A84C" opacity="0.5"/>
+    <g>
+      <ellipse cx="100" cy="20" rx="6" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+      <ellipse cx="100" cy="180" rx="6" ry="12" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+      <ellipse cx="20" cy="100" rx="12" ry="6" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+      <ellipse cx="180" cy="100" rx="12" ry="6" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">الموقع الرسمي لكريشنا سيلكز</div>
+      <h1 class="hero-title">
+        <span class="gold">Krishna</span><br>Silks
+      </h1>
+      <div class="hero-subtitle-ar">أفخم الأقمشة الهندية الأصيلة</div>
+      <p class="hero-desc">
+        من قلب الهند إليكم — نقدم أرقى الأقمشة الحريرية والساري والليهنغا المطرزة يدوياً بأيدي أمهر الحرفيين الهنود منذ أكثر من 30 عاماً.
+      </p>
+      <div class="hero-buttons">
+        <a href="#collection" class="btn-primary">تصفح المجموعة</a>
+        <a href="#contact" class="btn-secondary">اطلب الآن</a>
+      </div>
     </div>
 
-    <header class="relative h-[85vh] flex items-center justify-center border-b-4 border-gold overflow-hidden">
-        <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <img src="file_00000000323c71fdb7878b6250715f6b.png" class="absolute w-full h-full object-cover">
-        <div class="relative z-20 text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-serif-luxury text-white font-bold mb-6">Authentic Royal <span class="text-gold">Silks</span></h1>
-            <p class="text-lg text-stone-300 max-w-2xl mx-auto mb-10">Experience the grandeur of Banarasi drapes and artisanal handloom embroidery.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#catalogue" class="bg-gold text-black px-10 py-4 font-bold uppercase tracking-wider hover:bg-white transition">Explore Exhibition</a>
-                <a href="#contact" class="border border-white/40 text-white px-10 py-4 font-bold uppercase hover:bg-white hover:text-black transition">Inquire Now</a>
-            </div>
+    <div class="hero-image-area">
+      <div class="hero-image-frame">
+        <!-- Indian model in saree - using Unsplash Indian fashion image -->
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80" alt="أزياء هندية فاخرة" class="hero-img-main">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="badge-offer">
+          <span class="big">30%</span>
+          <span class="small">خصم<br>خاص</span>
         </div>
-    </header>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <section id="catalogue" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-serif-luxury text-gold text-center mb-16">The Heritage Collection</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="aspect-[3/4] border border-gold/30"><img src="1779108518201.png" class="w-full h-full object-cover"></div>
-            <div class="aspect-[3/4] border border-gold/30"><img src="1779108699419.png" class="w-full h-full object-cover"></div>
-            <div class="aspect-[3/4] border border-gold/30"><img src="file_000000000dd0724399a4775e267ebed7.png" class="w-full h-full object-cover"></div>
-            <div class="aspect-[3/4] border border-gold/30"><img src="file_000000007c447243916f141ffdb72f57.png" class="w-full h-full object-cover"></div>
+<!-- FABRIC COLLECTION -->
+<section id="collection" class="fabrics-section">
+  <div class="section-title fade-in">
+    <div class="overline">Our Collections</div>
+    <h2>مجموعاتنا من الأقمشة</h2>
+    <p>أقمشة نقية مستوردة مباشرة من بنارس، كانشيبورام، ومايسور</p>
+    <div class="gold-divider"></div>
+  </div>
+
+  <div class="fabrics-grid">
+
+    <div class="fabric-card fade-in">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Silk Saree">
+      <div class="fabric-overlay">
+        <div class="fabric-info">
+          <div class="fabric-tag">Banarasi Silk</div>
+          <div class="fabric-name">Katan Silk Saree</div>
+          <div class="fabric-name-ar">ساري حريري كاتان</div>
+          <div class="fabric-price">من $85</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section id="contact" class="py-24 bg-stone-950 border-t border-gold/30">
-        <div class="max-w-lg mx-auto bg-stone-900 p-10 border border-gold text-center">
-            <h3 class="text-3xl font-serif-luxury text-gold mb-6">Acquire KrishnaSilks.com</h3>
-            <div class="space-y-4 mb-10">
-                <a href="https://www.atom.com/name/KrishnaSilks.com" class="block bg-gold text-black py-4 font-bold uppercase hover:bg-white transition">Buy on Atom</a>
-                <a href="https://wa.me/9647805380508" class="block border border-gold text-gold py-4 font-bold uppercase hover:bg-gold hover:text-black transition">WhatsApp Inquire</a>
-            </div>
-            <div class="text-gold font-mono text-2xl">
-                Live Traffic: <span id="visitor-count">Loading...</span>
-            </div>
+    <div class="fabric-card fade-in">
+      <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&q=80" alt="Lehenga">
+      <div class="fabric-overlay">
+        <div class="fabric-info">
+          <div class="fabric-tag">Bridal Collection</div>
+          <div class="fabric-name">Bridal Lehenga</div>
+          <div class="fabric-name-ar">ليهنغا العروس</div>
+          <div class="fabric-price">من $220</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, doc, updateDoc, increment, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        const firebaseConfig = { apiKey: "AIzaSyCcjqu7G7ntMJCCgjaS2WKlJpTIKjoXTyU", authDomain: "jya-nexus.firebaseapp.com", projectId: "jya-nexus", storageBucket: "jya-nexus.firebasestorage.app", messagingSenderId: "245799484274", appId: "1:245799484274:web:df9ee167cb7fd80afdbbeb" };
-        const db = getFirestore(initializeApp(firebaseConfig));
-        const counterDocRef = doc(db, "analytics", "krishnasilks_counter");
-        onSnapshot(counterDocRef, (docSnap) => {
-            if (docSnap.exists()) document.getElementById("visitor-count").innerText = docSnap.data().views;
-        });
-        if (!sessionStorage.getItem("krishnasilks_session")) {
-            updateDoc(counterDocRef, { views: increment(1) });
-            sessionStorage.setItem("krishnasilks_session", "true");
-        }
-    </script>
+    <div class="fabric-card fade-in">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Embroidered Fabric">
+      <div class="fabric-overlay">
+        <div class="fabric-info">
+          <div class="fabric-tag">Zari Work</div>
+          <div class="fabric-name">Zardozi Embroidery</div>
+          <div class="fabric-name-ar">قماش زردوزي</div>
+          <div class="fabric-price">من $120</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fabric-card fade-in">
+      <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&q=80" alt="Chanderi Silk">
+      <div class="fabric-overlay">
+        <div class="fabric-info">
+          <div class="fabric-tag">Chanderi Silk</div>
+          <div class="fabric-name">Chanderi Suit</div>
+          <div class="fabric-name-ar">بدلة شاندري</div>
+          <div class="fabric-price">من $65</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fabric-card fade-in">
+      <img src="https://images.unsplash.com/photo-1606748426027-af3fb9c60b3b?w=500&q=80" alt="Kanjivaram">
+      <div class="fabric-overlay">
+        <div class="fabric-info">
+          <div class="fabric-tag">Kanjivaram</div>
+          <div class="fabric-name">Temple Silk</div>
+          <div class="fabric-name-ar">حرير كانجيفارام</div>
+          <div class="fabric-price">من $150</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fabric-card fade-in">
+      <img src="https://images.unsplash.com/photo-1625244495240-cb0e9c84b1a0?w=500&q=80" alt="Georgette">
+      <div class="fabric-overlay">
+        <div class="fabric-info">
+          <div class="fabric-tag">Designer</div>
+          <div class="fabric-name">Georgette Saree</div>
+          <div class="fabric-name-ar">ساري جورجيت</div>
+          <div class="fabric-price">من $55</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPANY SECTION -->
+<section class="company-section">
+  <div class="company-inner">
+    <div class="company-images fade-in">
+      <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&q=80" alt="Krishna Silks Store">
+      <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&q=80" alt="Fabric Weaving">
+      <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80" alt="Silk Fabric">
+    </div>
+
+    <div class="company-text fade-in">
+      <h2>Krishna Silks</h2>
+      <h3>تراث نسجه الزمن بخيوط الذهب</h3>
+      <p>
+        منذ أكثر من ثلاثة عقود، نحمل شعلة الحرفية الهندية الأصيلة. كل قطعة في مجموعتنا تُحكي قصة عريقة تمتد من أنوال بنارس القديمة إلى أناملكم الرفيعة.
+      </p>
+      <p>
+        نحن نتعاون مباشرة مع أكثر من 200 حائك وحرفي هندي موهوب، ضماناً للجودة الأصيلة وحفاظاً على الموروث الثقافي الغني.
+      </p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="num">30+</div>
+          <div class="label">سنة خبرة</div>
+        </div>
+        <div class="stat">
+          <div class="num">200+</div>
+          <div class="label">حرفي شريك</div>
+        </div>
+        <div class="stat">
+          <div class="num">5K+</div>
+          <div class="label">عميل سعيد</div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary">تواصل معنا</a>
+    </div>
+  </div>
+</section>
+
+<!-- MODELS / FASHION SECTION -->
+<section class="models-section">
+  <div class="section-title fade-in">
+    <div class="overline">Our Collections</div>
+    <h2>أزياء هندية أصيلة</h2>
+    <p>جمال الموروث الهندي في كل خيط، أناقة تتجاوز الزمن</p>
+    <div class="gold-divider"></div>
+  </div>
+
+  <div class="models-grid">
+    <div class="model-card featured">
+      <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&h=900&q=80&fit=crop" alt="Indian Fashion">
+      <div class="model-overlay">
+        <div class="model-name">مجموعة العروس الملكية</div>
+        <div class="model-style">BRIDAL ROYAL COLLECTION</div>
+      </div>
+    </div>
+    <div class="model-card">
+      <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&h=600&q=80&fit=crop" alt="Lehenga">
+      <div class="model-overlay">
+        <div class="model-name">ليهنغا فستيف</div>
+        <div class="model-style">FESTIVE LEHENGA</div>
+      </div>
+    </div>
+    <div class="model-card">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&h=600&q=80&fit=crop" alt="Saree">
+      <div class="model-overlay">
+        <div class="model-name">ساري كلاسيكي</div>
+        <div class="model-style">CLASSIC SILK SAREE</div>
+      </div>
+    </div>
+    <div class="model-card">
+      <img src="https://images.unsplash.com/photo-1625244495240-cb0e9c84b1a0?w=500&h=600&q=80&fit=crop" alt="Designer">
+      <div class="model-overlay">
+        <div class="model-name">أزياء حفلات</div>
+        <div class="model-style">PARTY WEAR</div>
+      </div>
+    </div>
+    <div class="model-card">
+      <img src="https://images.unsplash.com/photo-1606748426027-af3fb9c60b3b?w=500&h=600&q=80&fit=crop" alt="Traditional">
+      <div class="model-overlay">
+        <div class="model-name">الزي التقليدي</div>
+        <div class="model-style">TRADITIONAL WEAR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY / CONTACT SECTION -->
+<section id="contact" class="buy-section">
+  <div class="ornament">❧ ✦ ❧</div>
+  <div class="section-title fade-in" style="padding-bottom: 0;">
+    <div class="overline">Get In Touch</div>
+    <h2>اطلب أو تواصل معنا</h2>
+    <p>نحن هنا للرد على استفساراتكم وتلبية طلباتكم من أفخم الأقمشة الهندية</p>
+  </div>
+
+  <div class="contact-cards fade-in">
+    <a href="https://wa.me/9647805380508" class="contact-card">
+      <div class="icon">💬</div>
+      <div class="title">واتس آب</div>
+      <div class="value">+964 780 538 0508</div>
+    </a>
+    <a href="mailto:cccvcccv3@gmail.com" class="contact-card">
+      <div class="icon">📧</div>
+      <div class="title">البريد الإلكتروني</div>
+      <div class="value">cccvcccv3@gmail.com</div>
+    </a>
+    <a href="https://KrishnaSilks.com" class="contact-card">
+      <div class="icon">🌐</div>
+      <div class="title">الموقع</div>
+      <div class="value">KrishnaSilks.com</div>
+    </a>
+  </div>
+
+  <!-- DOMAIN PURCHASE BOX -->
+  <div class="domain-box fade-in">
+    <div class="domain-name">KrishnaSilks.com</div>
+    <p class="domain-desc">
+      هل تريد شراء هذا الدومين أو بناء موقعك الاحترافي؟<br>
+      نقدم خدمة تصميم المواقع وشراء الدومين عبر <strong style="color:var(--gold)">Godaddy</strong> — تواصل معنا الآن
+    </p>
+    <div class="domain-cta">
+      <a href="https://wa.me/9647805380508?text=مرحباً، أريد الاستفسار عن شراء دومين KrishnaSilks.com" class="btn-primary">
+        📲 تواصل واتس آب
+      </a>
+      <a href="mailto:cccvcccv3@gmail.com?subject=استفسار دومين KrishnaSilks.com" class="btn-secondary">
+        ✉️ إرسال إيميل
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="https://KrishnaSilks.com" class="logo">Krishna<span>Silks</span></a>
+      <p>
+        وجهتكم الأولى للأقمشة الهندية الفاخرة. نقدم أرقى الحرير والمنسوجات التقليدية من قلب الهند إلى العالم العربي.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>تسوّق</h4>
+      <ul>
+        <li><a href="#">الساري الحريري</a></li>
+        <li><a href="#">الليهنغا</a></li>
+        <li><a href="#">مجموعة العروس</a></li>
+        <li><a href="#">الأقمشة المتري</a></li>
+        <li><a href="#">العروض الخاصة</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تواصل</h4>
+      <ul>
+        <li><a href="https://wa.me/9647805380508">واتس آب</a></li>
+        <li><a href="mailto:cccvcccv3@gmail.com">البريد الإلكتروني</a></li>
+        <li><a href="#">سياسة الشحن</a></li>
+        <li><a href="#">سياسة الإرجاع</a></li>
+        <li><a href="#">عن الشركة</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 KrishnaSilks.com — جميع الحقوق محفوظة</p>
+    <p style="color:rgba(255,248,240,0.35); font-size:13px; direction:ltr;">KrishnaSilks.com</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
